@@ -25,7 +25,11 @@ const Header = () => {
     window.localStorage.setItem("theme", currentTheme)
   }, [currentTheme])
   return (
-    <HeaderNav>
+    <HeaderNav
+      initial={{ y: -72, opacity: 0 }}
+      transition={{ duration: 1, ease: [0.6, 0.05, -0.01, 0.9] }}
+      animate={{ y: 0, opacity: 1 }}
+    >
       {console.log(currentTheme)}
       <Container>
         <Flex spaceBetween noHeight>
