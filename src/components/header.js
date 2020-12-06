@@ -4,9 +4,14 @@ import {Link} from "gatsby"
 import { HeaderNav, Logo, Menu } from "../styles/headerStyles"
 import { Container, Flex } from "../styles/globalStyles"
 
+//context provider 
+import {useGlobalStateContext} from "../context/globalContext"
+
 const Header = () => {
-  return (
+    const {currentTheme}  = useGlobalStateContext()
+    return (
     <HeaderNav>
+        {console.log(currentTheme)}
       <Container>
         <Flex spaceBetween noHeight>
           <Logo>
