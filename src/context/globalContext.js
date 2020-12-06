@@ -1,8 +1,8 @@
 import React, { createContext, useReducer, useContext } from "react"
 
 //Define context
-const GlobaStateContext = createContext()
-const GlobaDispatchContext = createContext()
+const GlobalStateContext = createContext()
+const GlobalDispatchContext = createContext()
 
 //Reducer
 const globalReducer = (state, action) => {
@@ -16,15 +16,23 @@ const globalReducer = (state, action) => {
   }
 }
 
+
+
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(globalReducer, {
     currentTheme: "dark",
   })
   return (
-    <GlobaDispatchContext.provider value={dispatch}>
-      <GlobaStateContext.provider value={state}>
+    <GlobalDispatchContext.Provider value={dispatch}>
+      <GlobalStateContext.Provider value={state}>
         {children}
-      </GlobaStateContext.provider>
-    </GlobaDispatchContext.provider>
+      </GlobalStateContext.Provider>
+    </GlobalDispatchContext.Provider>
   )
 }
+
+
+//Custom hooks to use dispatch and state
+export const useGlobalStateContext = () => useContext(GlobalStateContext)
+
+export const useGlobalDispatchContext = () => useContext(GlobalDispatchContext)
