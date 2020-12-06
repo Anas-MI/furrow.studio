@@ -1,7 +1,8 @@
 import React from 'react'
+import {motion} from "framer-motion"
 import styled from "styled-components"
 
-export const HeaderNav = styled.div`
+export const HeaderNav = styled(motion.div)`
 height: 0px;
 width: 100%;
 position: absolute;
