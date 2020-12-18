@@ -6,6 +6,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import {createGlobalStyle, ThemeProvider} from "styled-components"
 import {normalize} from "styled-normalize"
 
+//Cursor
+import Cursor from "./customCursor"
 //context provider
 import {useGlobalStateContext} from "../context/globalContext"
 
@@ -16,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 ${normalize}
 *{
   text-decoration:none;
-  // cursor:none
+  cursor:none
 }
 
 html {
@@ -65,6 +67,7 @@ const {currentTheme} = useGlobalStateContext()
   <GlobalStyle/>
   <Header></Header>
   <main>{children}</main>
+  <Cursor/>
   </ThemeProvider>
   </>
 }

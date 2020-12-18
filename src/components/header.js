@@ -10,6 +10,8 @@ import {
   useGlobalDispatchContext,
 } from "../context/globalContext"
 
+
+
 const Header = () => {
   const dispatch = useGlobalDispatchContext()
   const { currentTheme } = useGlobalStateContext()

@@ -40,3 +40,20 @@ ${props => props.noHeight && css`height: 0;`}
 // export const Container = styled.div`
 // background:blueviolet;
 // color:#fff`
+
+
+export const Cursor = styled.div`
+position:absolute;
+left: 0; 
+top:0;
+width: 32px;d
+height: 32px;
+background: ${props=> props.theme.red};
+border-radius: 100%;
+transform: translate(-50%, -50%);
+transition: all .1s ease-in-out;
+transition-property: width, height, border;
+will-change: width, height, border;
+pointer-events: none;
+z-index: 999;
+`
